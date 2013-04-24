@@ -24,10 +24,6 @@ This little script requires the **requests** python module from http://docs.pyth
 	easy_install requests
 
 
-Execution
----------
-To run the script once the 
-
 Configuration
 =============
 
@@ -48,6 +44,14 @@ The script
 	HOSTNAME = "yourhostname.no-ip.com"
 	USERNAME = "username"
 	PASSWORD = "password" 
+
+Execution
+---------
+To run the script once you edited the parameters.
+
+.. code-block:: bash
+	
+	python update_noip.py
 
 Crontab
 -------
