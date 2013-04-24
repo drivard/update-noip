@@ -15,7 +15,7 @@ Installation
 ------------
 
 *Requirements
-This little script requires the **requests** python module from http://docs.python-requests.org/en/latest/
+This little script requires the ``requests`` python module from http://docs.python-requests.org/en/latest/
 
 .. code-block:: bash
 	
