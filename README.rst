@@ -17,9 +17,11 @@ Installation
 *Requirements
 This little script requires the **requests** python module from http://docs.python-requests.org/en/latest/
 .. code-block:: bash
-    pip install -U requests
-    # or 
-    easy_install requests
+	
+	pip install -U requests
+	# or 
+	easy_install requests
+
 
 Execution
 ---------
@@ -33,14 +35,16 @@ The script
 
 1. Clone the script
 .. code-block:: bash
-    it clone 
+	
+	git clone git@github.com:drivard/update-noip.git
 
 2. Edit the script with your username, password, hostname and ip addresses bag.
 .. code-block:: pycon
-    IPS_BAG  = ["152.25.65.88", "154.58.69.25", "45.255.6.54"]
-    HOSTNAME = "yourhostname.no-ip.com"
-    USERNAME = "username"
-    PASSWORD = "password" 
+	
+	IPS_BAG  = ["152.25.65.88", "154.58.69.25", "45.255.6.54"]
+	HOSTNAME = "yourhostname.no-ip.com"
+	USERNAME = "username"
+	PASSWORD = "password" 
 
 Crontab
 -------
