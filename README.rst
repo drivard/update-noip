@@ -18,8 +18,18 @@ Installation
 This little script requires the ``requests`` python module from http://docs.python-requests.org/en/latest/
 
 .. code-block:: bash
+
+	git clone git@github.com:drivard/update-noip.git
+	
+	cd update-noip
+	
+	pip install -r requirements.txt
+	
+	# or
 	
 	pip install -U requests
+	
+	# or
 	 
 	easy_install requests
 
