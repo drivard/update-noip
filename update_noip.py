@@ -14,7 +14,7 @@ PASSWORD = "" # noip.com password
 
 _old_ = IPS_BAG[random.randrange(0,len(IPS_BAG) - 1)]
 _new_ = urllib2.urlopen("http://curlmyip.com/").read().strip()
-_url_ = "http://dynupdate.no-ip.com/nic/update?hostname={hostname}&myip={ip}"
+_url_ = "https://dynupdate.no-ip.com/nic/update?hostname={hostname}&myip={ip}"
 
 # Update no-ip with the fake old ip
 _url_called_ = _url_.format(hostname=HOSTNAME, ip=_old_)
