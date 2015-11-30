@@ -14,9 +14,10 @@ log = syslog.syslog
 # IPs bag is the IP that will be used to replace your current ip.
 # It is the temporary changed ip.
 IPS_BAG  = ["74.56.89.5","207.164.79.7","206.47.78.150","64.235.215.181","64.237.254.153",]
-HOSTNAME = "home" # noip.com hostname
-USERNAME = "drivard" # noip.com username
-PASSWORD = "visa-99!" # noip.com password
+
+HOSTNAME = "" # noip.com hostname
+USERNAME = "" # noip.com username
+PASSWORD = "" # noip.com password
 
 _old_ = IPS_BAG[random.randrange(0,len(IPS_BAG) - 1)]
 _new_ = urllib2.urlopen("http://curlmyip.com/").read().strip()

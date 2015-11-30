@@ -68,5 +68,8 @@ Crontab
 
 .. code-block:: bash
 	
-        15 3 */5 * * /usr/bin/python /usr/src/updater/update_noip.py
+	15 3 */10 * *   /usr/bin/python /<path_to_python_script>/update_noip.py >> /dev/null 2>&1
+
+
+
 
