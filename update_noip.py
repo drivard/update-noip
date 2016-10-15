@@ -20,9 +20,9 @@ IPS_BAG = ['74.56.89.5', '207.164.79.7', '206.47.78.150', '64.235.215.181', '64.
            '223.180.110.45', '214.148.188.184', '178.110.125.181', '8.40.104.86', '40.254.106.213', '32.153.45.141']
 
 try:
-    from settings import USERNAME, PASSWORD, HOSTNAME
+    from settings import USERNAME, PASSWORD, HOSTNAMES
 except:
-    HOSTNAME = ""  # noip.com hostname
+    HOSTNAMES = ["hostname1", "hostname2", "hostname3"]  # noip.com hostnames
     USERNAME = ""  # noip.com username
     PASSWORD = ""  # noip.com password
 
@@ -34,22 +34,23 @@ log('... Update www.noip.com account ...')
 log('... OLD IP: {ip}'.format(ip=_old_))
 log('... NEW IP: {ip}'.format(ip=_new_))
 
-# Update no-ip with the fake old ip
-_url_called_ = _url_.format(hostname=HOSTNAME, ip=_old_)
-r = requests.get(_url_called_, auth=(USERNAME, PASSWORD))
-print r.status_code  # if 200 this means the page was reached
-print r.content  # should be the response from noip.com
+for hostname in HOSTNAMES:
+  # Update no-ip with the fake old ip
+  _url_called_ = _url_.format(hostname=hostname, ip=_old_)
+  r = requests.get(_url_called_, auth=(USERNAME, PASSWORD))
+  print r.status_code  # if 200 this means the page was reached
+  print r.content  # should be the response from noip.com
 
-# Update current public ip
-_url_called_ = _url_.format(hostname=HOSTNAME, ip=_new_)
-r = requests.get(_url_called_, auth=(USERNAME, PASSWORD))
-print r.status_code  # if 200 this means the page was reached
-print r.content  # should be the response from noip.com
+  # Update current public ip
+  _url_called_ = _url_.format(hostname=hostname, ip=_new_)
+  r = requests.get(_url_called_, auth=(USERNAME, PASSWORD))
+  print r.status_code  # if 200 this means the page was reached
+  print r.content  # should be the response from noip.com
 
-if r.status_code == 200:
-    success = 'yes'
-else:
-    success = 'no'
+  if r.status_code == 200:
+      success = 'yes'
+  else:
+      success = 'no'
 
 log('... Succeed: {success}'.format(success=success))
 # Successfully forced a change of your domain ip
