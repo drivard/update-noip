@@ -27,7 +27,7 @@ except:
     PASSWORD = ""  # noip.com password
 
 _old_ = IPS_BAG[random.randrange(0, len(IPS_BAG) - 1)]
-_new_ = urllib2.urlopen("http://api.enlightns.com/tools/whatismyip/?format=text").read().strip()
+_new_ = urllib2.urlopen("https://api.enlightns.com/tools/whatismyip/?format=text").read().strip()
 _url_ = "https://dynupdate.no-ip.com/nic/update?hostname={hostname}&myip={ip}"
 
 log('... Update www.noip.com account ...')
